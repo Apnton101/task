@@ -47,8 +47,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Show",
   data: function data() {
@@ -64,7 +62,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("/api/v1/users/".concat(this.$route.params.id)).then(function (res) {
-        console.log(res.data.user);
         _this.user = res.data.user;
       });
     }
@@ -157,77 +154,77 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("table", { staticClass: "table w-50" }, [
-        _c("tbody", [
-          _vm.user
-            ? _c("tr", [
+  return _vm.user
+    ? _c(
+        "div",
+        [
+          _c("table", { staticClass: "table w-50" }, [
+            _c("tbody", [
+              _c("tr", [
                 _c("td", [_vm._v("id")]),
                 _vm._v(" "),
                 _c("th", { attrs: { scope: "row" } }, [
                   _vm._v(_vm._s(_vm.user.id)),
                 ]),
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", [_vm._v("Name")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "row" } }, [
-              _vm._v(_vm._s(_vm.user.name)),
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td", [_vm._v("Name")]),
+                _vm._v(" "),
+                _c("th", { attrs: { scope: "row" } }, [
+                  _vm._v(_vm._s(_vm.user.name)),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td", [_vm._v("Email")]),
+                _vm._v(" "),
+                _c("th", { attrs: { scope: "row" } }, [
+                  _vm._v(_vm._s(_vm.user.email)),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td", [_vm._v("Phone")]),
+                _vm._v(" "),
+                _c("th", { attrs: { scope: "row" } }, [
+                  _vm._v(_vm._s(_vm.user.phone)),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td", [_vm._v("Position")]),
+                _vm._v(" "),
+                _c("th", { attrs: { scope: "row" } }, [
+                  _vm._v(_vm._s(_vm.user.position)),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td", [_vm._v("Photo")]),
+                _vm._v(" "),
+                _c("th", [
+                  _c("img", {
+                    staticStyle: { height: "70px", width: "70px" },
+                    attrs: { src: _vm.user.photo, alt: "" },
+                  }),
+                ]),
+              ]),
             ]),
           ]),
           _vm._v(" "),
-          _c("tr", [
-            _c("td", [_vm._v("Email")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "row" } }, [
-              _vm._v(_vm._s(_vm.user.email)),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", [_vm._v("Phone")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "row" } }, [
-              _vm._v(_vm._s(_vm.user.phone)),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", [_vm._v("Position")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "row" } }, [
-              _vm._v(_vm._s(_vm.user.position)),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", [_vm._v("Photo")]),
-            _vm._v(" "),
-            _c("th", [
-              _c("img", {
-                staticStyle: { height: "70px", width: "70px" },
-                attrs: { src: _vm.user.photo, alt: "" },
-              }),
-            ]),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c(
-        "router-link",
-        {
-          staticClass: "btn btn-primary",
-          attrs: { to: { name: "user.index" } },
-        },
-        [_vm._v("Back")]
-      ),
-    ],
-    1
-  )
+          _c(
+            "router-link",
+            {
+              staticClass: "btn btn-primary",
+              attrs: { to: { name: "user.index" } },
+            },
+            [_vm._v("Back")]
+          ),
+        ],
+        1
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true

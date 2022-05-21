@@ -1,10 +1,8 @@
 <template>
-    <div>
-
-
+    <div v-if="user">
     <table class="table w-50">
         <tbody>
-        <tr v-if="user">
+        <tr >
             <td>id</td>
             <th scope="row">{{ user.id }}</th>
         </tr>
@@ -54,7 +52,7 @@ export default {
         getUser() {
             axios.get(`/api/v1/users/${this.$route.params.id}`)
                 .then(res => {
-                    console.log(res.data.user);
+
                     this.user = res.data.user
                 })
         },
