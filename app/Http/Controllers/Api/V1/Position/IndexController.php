@@ -14,8 +14,5 @@ class IndexController extends Controller
     {
        return new IndexResource(Position::all());
 
-
-
-
     }
 }

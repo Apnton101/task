@@ -37,7 +37,7 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->renderable(function (NotFoundHttpException $e, $request) {
-            if ($request->is('api/*')) {
+            if ($request->is('api/vi/users')) {
                 return response()->json([
                     'success' => 'false',
                     'message' => 'Page not found'
@@ -56,7 +56,31 @@ class Handler extends ExceptionHandler
             }
         });
 
+        $this->renderable(function (NotFoundHttpException $e, $request) {
+
+            if ($request->is('api/v1/users/*')) {
+                return response()->json([
+                    'success' => 'false',
+                    'message' => 'The user with the requested identifier does not exist',
+                    'fails' => [
+                        'user_id' => 'User not found'
+                    ]
+                ], 404);
+            }
+        });
+
+        $this->renderable(function (NotFoundHttpException $e, $request) {
+            if ($request->is('api/vi/positions')) {
+                return response()->json([
+                    'success' => 'false',
+                    'message' => 'Page not found'
+                ], 404);
+            }
+        });
+
     }
+
+
 
 
 }

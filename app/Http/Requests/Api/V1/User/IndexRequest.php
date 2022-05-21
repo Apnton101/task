@@ -28,7 +28,8 @@ class IndexRequest extends FormRequest
     {
         return [
             'count' => 'integer|min:1|max:100',
-            'page' => 'integer|min:1'
+            'page' => 'integer|min:1',
+
 
         ];
 

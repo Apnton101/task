@@ -1,7 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\IndexController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\IndexController;
 */
 
 
-Route::get('{page}', 'IndexController')->where('page', '.*');
+Route::get('{page}', 'App\Http\Controllers\IndexController')->where('page', '.*');
 
 Auth::routes();
 

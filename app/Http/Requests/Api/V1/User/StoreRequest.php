@@ -28,7 +28,7 @@ class StoreRequest extends FormRequest
             'email' => 'required|email',
             'phone' => 'required|regex:/^\+380\d{3}\d{2}\d{2}\d{2}$/',
             'position_id' => 'integer|required',
-            'image' => 'nullable|image|max:5'
+            'image' => 'nullable|image|max:5120'
 
 
         ];
@@ -42,7 +42,7 @@ class StoreRequest extends FormRequest
             'email.required|email' => 'The email must be a valid email address.',
             'phone.required' => 'The phone field is required.',
             'position_id.integer|required' => 'The position id must be an integer.',
-            'image.nullable|image|max:5' => ['The photo may not be greater than 5 Mbytes', 'Image is invalid.']
+            'image.nullable|image|max:5120' => ['The photo may not be greater than 5 Mbytes', 'Image is invalid.']
 
         ];
     }

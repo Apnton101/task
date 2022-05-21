@@ -11,11 +11,6 @@ class ShowController extends BaseController
 
     public function __invoke(ShowRequest $request, User $user)
     {
-        $data = $request->validated();
-
-
-
         return new ShowResource($user);
-
     }
 }

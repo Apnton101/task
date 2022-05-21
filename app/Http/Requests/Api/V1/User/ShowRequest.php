@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Api\V1\User;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Symfony\Component\Console\Input\Input;
 
 class ShowRequest extends FormRequest
 {
@@ -22,13 +23,13 @@ class ShowRequest extends FormRequest
      *
      * @return array
      */
+
+
     public function rules()
     {
 
         return [
-            'id' => 'integer'
-
-
+            'user' => 'integer'
         ];
 
     }
@@ -36,7 +37,7 @@ class ShowRequest extends FormRequest
     public function messages()
     {
         return [
-            'id.integer' => "The user_id must be an integer.",
+            'user.integer' => "The user_id must be an integer.",
 
 
         ];

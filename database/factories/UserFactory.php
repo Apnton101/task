@@ -15,9 +15,9 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->firstName($gender = null|'male'|'female'),
+            'name' => $this->faker->firstName('male'|'female'),
             'email' => $this->faker->unique()->safeEmail(),
-            'phone' => $this->faker->phoneNumber(),
+            'phone' => $this->faker->tollFreePhoneNumber(),
             'url' => 'http://127.0.0.1:8000/storage/images/c74be51fa49781779c0717b54013927c.jpg',
             'path' => 'images/c74be51fa49781779c0717b54013927c.jpg',
             'position_id' => $this->faker->numberBetween(1, 5),
